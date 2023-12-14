@@ -1,0 +1,12 @@
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\bin\Debug\net7.0\ClassLib.deps.json
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\bin\Debug\net7.0\ClassLib.dll
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\bin\Debug\net7.0\ClassLib.pdb
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\obj\Debug\net7.0\ClassLib.csproj.AssemblyReference.cache
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\obj\Debug\net7.0\ClassLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\obj\Debug\net7.0\ClassLib.AssemblyInfoInputs.cache
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\obj\Debug\net7.0\ClassLib.AssemblyInfo.cs
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\obj\Debug\net7.0\ClassLib.csproj.CoreCompileInputs.cache
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\obj\Debug\net7.0\ClassLib.dll
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\obj\Debug\net7.0\refint\ClassLib.dll
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\obj\Debug\net7.0\ClassLib.pdb
+C:\Users\Soffe\Desktop\TheGlossaryApp\ClassLib\obj\Debug\net7.0\ref\ClassLib.dll
