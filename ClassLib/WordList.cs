@@ -1,12 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
 namespace ClassLib
 {
     public class WordList
     {
-
         public string Name { get; private set; }
-
         public string[] Languages { get; private set; }
-
         private List<Word> words = new List<Word>();
 
         public WordList(string name, params string[] languages)
@@ -23,20 +25,30 @@ namespace ClassLib
             }
         }
 
+        private static string GetDataFolderPath()
+        {
+            string folderName = "theglossaryapp";
+            string localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string folderPath = Path.Combine(localAppData, folderName);
 
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
 
-        //List
+            return folderPath;
+        }
 
         public static string[] GetLists()
         {
-            string directoryPath = @"C:\Users\Soffe\AppData\Local";
+            string directoryPath = GetDataFolderPath();
             string[] files = Directory.GetFiles(directoryPath, "*.dat");
             return files.Select(Path.GetFileNameWithoutExtension).ToArray();
         }
 
         public static WordList LoadList(string name)
         {
-            string filePath = $@"C:\Users\Soffe\AppData\Local\{name}.dat";
+            string filePath = Path.Combine(GetDataFolderPath(), $"{name}.dat");
             if (!File.Exists(filePath))
                 throw new FileNotFoundException($"Filen '{name}.dat' hittades inte i registret.");
 
@@ -71,7 +83,7 @@ namespace ClassLib
 
         public static bool RemoveList(string name)
         {
-            string filePath = $@"C:\Users\Soffe\AppData\Local\{name}.dat";
+            string filePath = Path.Combine(GetDataFolderPath(), $"{name}.dat");
             if (File.Exists(filePath))
             {
                 File.Delete(filePath);
@@ -80,13 +92,11 @@ namespace ClassLib
             return false;
         }
 
-
-
-        //CRUD + Count & Practice method
+        // CRUD + Count & Practice method
 
         public void Save()
         {
-            string filePath = $@"C:\Users\Soffe\AppData\Local\{Name}.dat";
+            string filePath = Path.Combine(GetDataFolderPath(), $"{Name}.dat");
             using (var writer = new StreamWriter(filePath))
             {
                 writer.WriteLine(string.Join(";", Languages));
@@ -138,6 +148,5 @@ namespace ClassLib
 
             return (selectedWord, fromLanguageIndex, toLanguageIndex);
         }
-
     }
 }
