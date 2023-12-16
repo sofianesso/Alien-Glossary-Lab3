@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ClassLib\\ClassLib.csproj",
+      "projectUniqueName": "C:\\Users\\Soffe\\desktop\\theglossaryapp\\ClassLib\\ClassLib.csproj",
       "projectName": "ClassLib",
-      "projectPath": "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ClassLib\\ClassLib.csproj",
+      "projectPath": "C:\\Users\\Soffe\\desktop\\theglossaryapp\\ClassLib\\ClassLib.csproj",
       "packagesPath": "C:\\Users\\Soffe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ClassLib\\obj\\",
+      "outputPath": "C:\\Users\\Soffe\\desktop\\theglossaryapp\\ClassLib\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Soffe\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

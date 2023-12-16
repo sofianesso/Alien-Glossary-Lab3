@@ -16,3 +16,4 @@ C:\Users\Soffe\Desktop\TheGlossaryApp\ConsoleApp\obj\Debug\net7.0\refint\Console
 C:\Users\Soffe\Desktop\TheGlossaryApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.pdb
 C:\Users\Soffe\Desktop\TheGlossaryApp\ConsoleApp\obj\Debug\net7.0\ConsoleApp.genruntimeconfig.cache
 C:\Users\Soffe\Desktop\TheGlossaryApp\ConsoleApp\obj\Debug\net7.0\ref\ConsoleApp.dll
+C:\Users\Soffe\desktop\theglossaryapp\consoleapp\obj\Debug\net7.0\ConsoleApp.sourcelink.json
