@@ -6,6 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
+
         PrintWelcomeMessage();
 
         if (args.Length > 0)
@@ -16,25 +17,38 @@ class Program
         {
             while (true)
             {
-                ShowUsageInstructions();
-
-                Console.WriteLine("Ange ett kommando (eller 'exit' för att avsluta):");
-                var input = Console.ReadLine();
-                if (input != null && input.ToLower() == "exit")
-                {
-                    break;
-                }
-
-                if (input != null)
-                {
-                    var inputArgs = input.Split(' ');
-                    ProcessArguments(inputArgs);
-                }
-
-
-                Console.WriteLine();
+                Console.Clear();
+                ShowUsageInstructions(); 
+                HandleUserInput(); 
             }
         }
+    }
+
+    static void HandleUserInput()
+    {
+        Console.Clear();
+        PrintWelcomeMessage();
+
+        ShowUsageInstructions();
+
+        Console.Write("Ange ett kommando (eller 'exit' för att avsluta): ");
+        Console.ForegroundColor = ConsoleColor.White;
+        var input = Console.ReadLine();
+        Console.ResetColor();
+
+        if (input != null && input.ToLower() == "exit")
+        {
+            Environment.Exit(0);
+        }
+
+        if (input != null)
+        {
+            var inputArgs = input.Split(' ');
+            ProcessArguments(inputArgs);
+        }
+
+        Console.WriteLine("Tryck på valfri tangent för att fortsätta...");
+        Console.ReadKey(); 
     }
 
     static bool ProcessArguments(string[] args)
@@ -77,15 +91,18 @@ class Program
     }
     static void ShowUsageInstructions()
     {
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Använd något av följande parametrar:");
-        Console.WriteLine("-lists");
-        Console.WriteLine("-new <list name> <language 1> <language 2> .. <language n>");
-        Console.WriteLine("-add <list name>");
-        Console.WriteLine("-remove <list name> <language> <word 1> <word 2> .. <word n>");
-        Console.WriteLine("-words <list name> <sortByLanguage>");
-        Console.WriteLine("-count <list name>");
-        Console.WriteLine("-practice <list name>");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine(new string('-', 40));
+        Console.WriteLine("Kommandon:".PadRight(39) + "|");
+        Console.WriteLine(new string('-', 40));
+        Console.WriteLine("-lists".PadRight(39) + "|");
+        Console.WriteLine("-new <list name> <language 1> ...".PadRight(39) + "|");
+        Console.WriteLine("-add <list name>".PadRight(39) + "|");
+        Console.WriteLine("-remove <list name> <language> <word 1> ...".PadRight(39) + "|");
+        Console.WriteLine("-words <list name> [sortByLanguage]".PadRight(39) + "|");
+        Console.WriteLine("-count <list name>".PadRight(39) + "|");
+        Console.WriteLine("-practice <list name>".PadRight(39) + "|");
+        Console.WriteLine(new string('-', 40));
         Console.ResetColor();
     }
     static void ListWordLists()
@@ -106,6 +123,7 @@ class Program
 
         var newList = new WordList(args[1], args.Skip(2).ToArray());
         newList.Save();
+        Console.WriteLine($"Lista '{args[1]}' skapad med språken {String.Join(", ", args.Skip(2))}.");
         AddWordsToWordList(newList);
     }
     static void AddWordsToList(string[] args)
@@ -189,42 +207,33 @@ class Program
     }
     static void AddWordsToWordList(WordList list)
     {
+
         Console.WriteLine($"Lägger till ord i listan: {list.Name}");
         Console.WriteLine("Ange översättningar för varje språk. Tryck på Enter utan att skriva något för att avsluta.");
 
         while (true)
         {
             var translations = new string[list.Languages.Length];
-
             for (int i = 0; i < list.Languages.Length; i++)
             {
                 Console.Write($"Ange översättningen på {list.Languages[i]}: ");
                 var input = Console.ReadLine();
 
-                if (i == 0 && string.IsNullOrEmpty(input))
+                if (string.IsNullOrEmpty(input))
                 {
-                    return; 
-                }
-
-                if (i > 0 && string.IsNullOrEmpty(input))
-                {
-                    break;
+                    return;
                 }
 
                 translations[i] = input;
-
-                if (i == list.Languages.Length - 1)
-                {
-                    list.Add(translations);
-                    return;
-                }
             }
+
+            list.Add(translations);
+            Console.WriteLine("Ord tillagt. Ange nästa ord eller tryck Enter för att avsluta.");
         }
     }
     static void PracticeWithWordList(WordList list)
     {
         int totalAttempts = 0, correctAnswers = 0;
-
         Console.WriteLine("Öva på ord. Skriv 'exit' för att avsluta och se din poäng.");
 
         while (true)
@@ -250,7 +259,7 @@ class Program
             }
         }
 
-        Console.WriteLine($"Du övade på {totalAttempts} ord och hade rätt på {correctAnswers} av dem. Din poäng: {correctAnswers} av {totalAttempts}");
+        Console.WriteLine($"Du övade på {totalAttempts} ord och hade rätt på {correctAnswers} av dem. Din poäng: {correctAnswers}/{totalAttempts}");
 
     }
     static void PrintWelcomeMessage()
@@ -264,9 +273,6 @@ class Program
     Console.WriteLine("   \\        /      \\        /");
     Console.WriteLine("    \\  __  /        \\  __  /");
     Console.WriteLine("     '.__.'          '.__.'");
-    Console.WriteLine("      |  |            |  |");
-    Console.WriteLine("      |  |            |  |");
-    Console.WriteLine();
     Console.WriteLine(" _____ _               _    _ _                               ");
     Console.WriteLine("|_   _| |__   ___     / \\  | (_) ___ _ __                     ");
     Console.WriteLine("  | | | '_ \\ / _ \\   / _ \\ | | |/ _ \\ '_ \\                    ");
