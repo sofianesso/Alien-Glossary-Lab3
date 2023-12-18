@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Soffe\\desktop\\theglossaryapp\\consoleapp\\ConsoleApp.csproj": {}
+    "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ConsoleApp\\ConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Soffe\\desktop\\theglossaryapp\\ClassLib\\ClassLib.csproj": {
+    "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ClassLib\\ClassLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Soffe\\desktop\\theglossaryapp\\ClassLib\\ClassLib.csproj",
+        "projectUniqueName": "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ClassLib\\ClassLib.csproj",
         "projectName": "ClassLib",
-        "projectPath": "C:\\Users\\Soffe\\desktop\\theglossaryapp\\ClassLib\\ClassLib.csproj",
+        "projectPath": "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ClassLib\\ClassLib.csproj",
         "packagesPath": "C:\\Users\\Soffe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Soffe\\desktop\\theglossaryapp\\ClassLib\\obj\\",
+        "outputPath": "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ClassLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Soffe\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "C:\\Users\\Soffe\\desktop\\theglossaryapp\\consoleapp\\ConsoleApp.csproj": {
+    "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ConsoleApp\\ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Soffe\\desktop\\theglossaryapp\\consoleapp\\ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ConsoleApp\\ConsoleApp.csproj",
         "projectName": "ConsoleApp",
-        "projectPath": "C:\\Users\\Soffe\\desktop\\theglossaryapp\\consoleapp\\ConsoleApp.csproj",
+        "projectPath": "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ConsoleApp\\ConsoleApp.csproj",
         "packagesPath": "C:\\Users\\Soffe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Soffe\\desktop\\theglossaryapp\\consoleapp\\obj\\",
+        "outputPath": "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Soffe\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Soffe\\desktop\\theglossaryapp\\ClassLib\\ClassLib.csproj": {
-                "projectPath": "C:\\Users\\Soffe\\desktop\\theglossaryapp\\ClassLib\\ClassLib.csproj"
+              "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ClassLib\\ClassLib.csproj": {
+                "projectPath": "C:\\Users\\Soffe\\Desktop\\TheGlossaryApp\\ClassLib\\ClassLib.csproj"
               }
             }
           }
