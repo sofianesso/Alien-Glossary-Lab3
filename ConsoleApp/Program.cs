@@ -190,21 +190,35 @@ class Program
     static void AddWordsToWordList(WordList list)
     {
         Console.WriteLine($"Lägger till ord i listan: {list.Name}");
+        Console.WriteLine("Ange översättningar för varje språk. Tryck på Enter utan att skriva något för att avsluta.");
+
         while (true)
         {
             var translations = new string[list.Languages.Length];
+
             for (int i = 0; i < list.Languages.Length; i++)
             {
                 Console.Write($"Ange översättningen på {list.Languages[i]}: ");
                 var input = Console.ReadLine();
-                if (string.IsNullOrEmpty(input))
+
+                if (i == 0 && string.IsNullOrEmpty(input))
                 {
+                    return; 
+                }
+
+                if (i > 0 && string.IsNullOrEmpty(input))
+                {
+                    break;
+                }
+
+                translations[i] = input;
+
+                if (i == list.Languages.Length - 1)
+                {
+                    list.Add(translations);
                     return;
                 }
-                translations[i] = input;
             }
-
-            list.Add(translations);
         }
     }
     static void PracticeWithWordList(WordList list)
