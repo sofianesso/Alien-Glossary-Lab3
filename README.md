@@ -110,11 +110,11 @@ To get a local copy up and running follow these simple example steps.
    
 * Replace AlienGlossary_Lab3 with the actual name of the root directory if it is different.
    
-5. Run the Console App
+4. Run the Console App
    ```sh
    dotnet run
    ```
-6.  Launch the WinForms App, navigate to the WinForms directory
+5.  Launch the WinForms App, navigate to the WinForms directory
   ```sh
     cd AlienGlossary_Lab3/winformsapp
    ```
