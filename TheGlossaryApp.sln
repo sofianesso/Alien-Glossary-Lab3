@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLib", "ClassLib\ClassL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{E143563D-1332-42F5-8B21-1941379B7BE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms", "WinForms\WinForms.csproj", "{E43467A0-AA4E-4A45-A7A4-E7B9A734E831}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForms", "WinForms\WinForms.csproj", "{E43467A0-AA4E-4A45-A7A4-E7B9A734E831}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

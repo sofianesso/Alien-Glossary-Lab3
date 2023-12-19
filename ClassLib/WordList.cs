@@ -14,6 +14,11 @@ namespace ClassLib
         public WordList(string name, params string[] languages)
         {
             Name = name;
+            Languages = languages.Where(lang => !string.IsNullOrWhiteSpace(lang)).ToArray();
+            if (Languages.Length == 0)
+            {
+                throw new ArgumentException("Inga giltiga språk angivna.");
+            }
             Languages = languages;
         }
 
@@ -56,16 +61,24 @@ namespace ClassLib
             if (lines.Length == 0)
                 throw new InvalidOperationException("Filformatet är inte giltigt, programmet stödjer endast .dat filer");
 
-            string[] languages = lines[0].Split(';');
+            string[] languages = lines[0].Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
             var wordList = new WordList(name, languages);
 
             for (int i = 1; i < lines.Length; i++)
             {
-                var translations = lines[i].Split(';');
+                var translations = lines[i].Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
                 if (translations.Length != languages.Length)
-                    throw new InvalidOperationException("Fel antal översättningar i raden.");
+                {
+                    throw new InvalidOperationException($"Fel antal översättningar i raden: {lines[i]}");
+                }
 
-                wordList.words.Add(new Word(translations));
+                var completeTranslations = new string[languages.Length];
+                for (int j = 0; j < languages.Length; j++)
+                {
+                    completeTranslations[j] = j < translations.Length ? translations[j] : "";
+                }
+
+                wordList.words.Add(new Word(completeTranslations));
             }
 
             return wordList;

@@ -239,6 +239,13 @@ class Program
         while (true)
         {
             var (wordToPractice, fromLanguageIndex, toLanguageIndex) = list.GetWordToPractice();
+
+            
+            if (string.IsNullOrEmpty(wordToPractice.Translations[fromLanguageIndex]) || string.IsNullOrEmpty(wordToPractice.Translations[toLanguageIndex]))
+            {
+                continue; 
+            }
+
             Console.WriteLine($"Översätt ordet '{wordToPractice.Translations[fromLanguageIndex]}' från {list.Languages[fromLanguageIndex]} till {list.Languages[toLanguageIndex]}:");
             var userTranslation = Console.ReadLine();
 
@@ -260,7 +267,6 @@ class Program
         }
 
         Console.WriteLine($"Du övade på {totalAttempts} ord och hade rätt på {correctAnswers} av dem. Din poäng: {correctAnswers}/{totalAttempts}");
-
     }
     static void PrintWelcomeMessage()
 {

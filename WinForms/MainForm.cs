@@ -120,28 +120,28 @@ namespace WinForms
             }
 
             var translations = new string[list.Languages.Length];
+
             for (int i = 0; i < list.Languages.Length; i++)
             {
                 var promptMessage = $"Enter word in {list.Languages[i]}:";
                 var translation = ShowPrompt(promptMessage);
 
-                if (translation == null)
+                if (translation == null) 
                     return;
-
-                if (string.IsNullOrWhiteSpace(translation)) 
-                {
-                    MessageBox.Show("Please enter a valid word.");
-                    i--; 
-                    continue;
-                }
 
                 translations[i] = translation.Trim();
             }
 
-            list.Add(translations);
-            list.Save();
-            UpdateWordListDisplay(selectedListName);
-
+            try
+            {
+                list.Add(translations);
+                list.Save();
+                UpdateWordListDisplay(selectedListName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding word: {ex.Message}");
+            }
 
         }
 
@@ -183,6 +183,7 @@ namespace WinForms
 
         private void btnPractice_Click(object sender, EventArgs e)
         {
+
             if (comboBoxLists.SelectedItem == null)
             {
                 MessageBox.Show("Please select a list.");
@@ -211,6 +212,13 @@ namespace WinForms
                 while (true)
                 {
                     var (wordToPractice, fromLanguageIndex, toLanguageIndex) = list.GetWordToPractice();
+
+                    if (string.IsNullOrEmpty(wordToPractice.Translations[fromLanguageIndex]) ||
+                        string.IsNullOrEmpty(wordToPractice.Translations[toLanguageIndex]))
+                    {
+                        continue; 
+                    }
+
                     var prompt = $"Translate the word '{wordToPractice.Translations[fromLanguageIndex]}' from {list.Languages[fromLanguageIndex]} to {list.Languages[toLanguageIndex]}:";
                     var userTranslation = ShowPrompt(prompt);
 
