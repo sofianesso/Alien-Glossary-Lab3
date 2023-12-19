@@ -18,7 +18,7 @@
 
 <h3 align="center">Alien Glossary App</h3>
 
-  <p align="center"> This app, crafted in C# and .NET, is a versatile application comprising three key components: a Class Library, a Console Application, and a WinForms GUI. The Class Library acts as the core, housing the essential logic and functionalities used across the application. The Console Application offers a straightforward, command-line interface for efficient interaction and is mirrored by the WinForms GUI, which provides a graphical counterpart for a more intuitive user experience. Both the console and WinForms interfaces enable seamless access and management of the glossary, catering to different user preferences and workflows.
+  <p align="center"> This app, crafted in C# and .NET, is a versatile application comprising three key components: <p> Class Library, Console Application, WinForms GUI<p>  The Class Library acts as the core, housing the essential logic and functionalities used across the application. The Console Application offers a straightforward, command-line interface for efficient interaction and is mirrored by the WinForms GUI, which provides a graphical counterpart for a more intuitive user experience. Both the console and WinForms interfaces enable seamless access and management of the glossary, catering to different user preferences and workflows.
     <br />
     <a href="https://github.com/sofianesso/AlienGlossary_Lab3"><strong>Explore the docs »</strong></a>
     <br />
